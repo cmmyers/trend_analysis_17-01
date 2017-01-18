@@ -13,8 +13,9 @@ I then analyzed changes in term frequency year over year to identify specific
 garments' trend cycles.
 
 Process:
+
 1) I collected data from approximately 1 million photo posts spanning March, 2008 to
-November, 2016. These posts are composed of one or more photos, a title, date, and
+November, 2016. These posts are comprised of one or more photos, a title, date, and
 a description that might range from a few words to several paragraphs.
 The data was processed using BeautifulSoup and stored using
 MongoDB and JSON.
