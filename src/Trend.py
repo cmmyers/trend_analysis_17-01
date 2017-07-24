@@ -1,4 +1,6 @@
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 
 class Trend(object):
 
@@ -20,7 +22,7 @@ class Trend(object):
 
         y_axis = tfm*1./tpm
 
-        x_axis = coerce_to_datetime(month_year_tuples)
+        x_axis = self.coerce_to_datetime(month_year_tuples)
 
         plt.plot(x_axis, y_axis, label=self.phrase)
 
@@ -41,7 +43,7 @@ class Trend(object):
 
         freq_ratio, abs_dif_month_over_month, mag_dif_month_over_month, month_year_tuples = \
                self.differences(df, start_month, start_year, num_months)
-        x_axis = coerce_to_datetime(month_year_tuples)
+        x_axis = self.coerce_to_datetime(month_year_tuples)
         x_axis = x_axis[12:]
 
         y_axis = mag_dif_month_over_month
@@ -119,7 +121,7 @@ class Trend(object):
         tfm = np.array(tf_by_mo)
         tpm = np.array(tp_by_mo)
         my_tuples = month_year_tuples
-        return [my_tuples, tfm, tpm]
+        return (tfm, tpm, my_tuples)
 
     def get_tfy_tpy(self, df, start_year, end_year):
         '''
@@ -152,3 +154,15 @@ class Trend(object):
         tpy = np.array(tp_by_yr)
         years = xrange(start_year, end_year + 1)
         return tfy, tpy, years
+
+    def coerce_to_datetime(self, series):
+        series_2 = []
+        for item in series:
+            try:
+                s = "{}, {}, {}".format(item[0], item[1], item[2])
+                series_2.append(s)
+            except TypeError:
+                series_2.append('2008, 03, 01')
+        series_2 = pd.Series(series_2)
+        series_3 = pd.to_datetime(series_2)
+        return series_3

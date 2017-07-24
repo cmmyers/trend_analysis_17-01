@@ -23,7 +23,7 @@ MongoDB and JSON.
 2) After adding year, quarter and month features to my dataset, and tokenizing the
 photo descriptions, I created a Word2Vec model for the data for years 2009-2012.
 I used this model to identify approximately 60 'garment words' based on their
-similarity to six 'basic' garment words: 'dress', 'skirt', 'pants', 'shoes' and
+similarity to five 'basic' garment words: 'dress', 'skirt', 'pants', 'shoes' and
 'bag.'
 
 3) Using my ~60 identified garment words, I created bigrams that paired every
@@ -41,5 +41,5 @@ examined the plots for significant peaks.
 
 Moving forward, I intend to use natural language modeling alongside time-series
 clustering to attempt to predict emerging trends. With years 2014 through 2016
-currently held out, I will have several opportunities to validated and refine
+currently held out, I will have several opportunities to validate and refine
 my model.
