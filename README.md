@@ -41,5 +41,5 @@ examined the plots for significant peaks.
 
 Moving forward, I intend to use natural language modeling alongside time-series
 clustering to attempt to predict emerging trends. With years 2014 through 2016
-currently held out, I will have several opportunities to validated and refine
+currently held out, I will have several opportunities to validate and refine
 my model.
