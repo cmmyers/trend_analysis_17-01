@@ -23,7 +23,7 @@ MongoDB and JSON.
 2) After adding year, quarter and month features to my dataset, and tokenizing the
 photo descriptions, I created a Word2Vec model for the data for years 2009-2012.
 I used this model to identify approximately 60 'garment words' based on their
-similarity to six 'basic' garment words: 'dress', 'skirt', 'pants', 'shoes' and
+similarity to five 'basic' garment words: 'dress', 'skirt', 'pants', 'shoes' and
 'bag.'
 
 3) Using my ~60 identified garment words, I created bigrams that paired every
